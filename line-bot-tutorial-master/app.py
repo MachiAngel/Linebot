@@ -16,9 +16,9 @@ from linebot.models import *
 app = Flask(__name__)
 line_bot_api = LineBotApi('V0zLVWjPlHcD1yfnjZho5FyP6JHC8gW/BbKqDRmg09crYmblHx1bfxzAeGbmVapEdousyDWXUWXI3F16qsxVoAacLuMMpjTvRBaxJH0d18OkqR1xNhd47dEWacZuxVHX4F1yaRKHE6lrghj2K4BVmgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('321491bae260d891a883343dbdc7ce08')
-client_id = 'YOUR_IMGUR_CLIENT_ID'
-client_secret = 'YOUR_IMGUR__CLIENT_SECRET'
-album_id = 'YOUR_IMGUR_ALBUM_ID'
+client_id = '075e69c3e1fa5b6'
+client_secret = '35abd64bed78a4404f7e707df9b1a199690c7da2'
+album_id = 'yjdr1'
 API_Get_Image ='API_Get_Image'
 
 
@@ -493,18 +493,6 @@ def handle_message(event):
                 MessageTemplateAction(
                     label='開始玩',
                     text='開始玩'
-                ),
-                URITemplateAction(
-                    label='影片介紹 阿肥bot',
-                    uri='https://youtu.be/1IxtWgWxtlE'
-                ),
-                URITemplateAction(
-                    label='如何建立自己的 Line Bot',
-                    uri='https://github.com/twtrubiks/line-bot-tutorial'
-                ),
-                URITemplateAction(
-                    label='聯絡作者',
-                    uri='https://www.facebook.com/TWTRubiks?ref=bookmarks'
                 )
             ]
         )
