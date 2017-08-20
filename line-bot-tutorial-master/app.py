@@ -14,7 +14,7 @@ from linebot.exceptions import (
 from linebot.models import *
 
 app = Flask(__name__)
-line_bot_api = LineBotApi('1531234699')
+line_bot_api = LineBotApi('V0zLVWjPlHcD1yfnjZho5FyP6JHC8gW/BbKqDRmg09crYmblHx1bfxzAeGbmVapEdousyDWXUWXI3F16qsxVoAacLuMMpjTvRBaxJH0d18OkqR1xNhd47dEWacZuxVHX4F1yaRKHE6lrghj2K4BVmgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('321491bae260d891a883343dbdc7ce08')
 client_id = 'YOUR_IMGUR_CLIENT_ID'
 client_secret = 'YOUR_IMGUR__CLIENT_SECRET'
