@@ -349,7 +349,7 @@ def handle_message(event):
             event.reply_token,
             TextSendMessage(text=content))
         return 0
-    if event.message.text == "科技新報":
+    if event.message.text == "科技ㄢ ㄢ ":
         content = technews()
         line_bot_api.reply_message(
             event.reply_token,
