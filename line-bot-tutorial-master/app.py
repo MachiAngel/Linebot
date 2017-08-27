@@ -5,6 +5,12 @@ from bs4 import BeautifulSoup
 from flask import Flask, request, abort
 from imgurpython import ImgurClient
 
+import os
+from flask_restful import Api
+from resources.store import Store, StoreList
+
+
+
 from linebot import (
     LineBotApi, WebhookHandler
 )
@@ -14,12 +20,20 @@ from linebot.exceptions import (
 from linebot.models import *
 
 app = Flask(__name__)
+app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL') #'sqlite:///data.db'
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+app.secret_key = 'jose'
+
+api = Api(app)
+api.add_resource(StoreList, '/stores/')
+
 line_bot_api = LineBotApi('V0zLVWjPlHcD1yfnjZho5FyP6JHC8gW/BbKqDRmg09crYmblHx1bfxzAeGbmVapEdousyDWXUWXI3F16qsxVoAacLuMMpjTvRBaxJH0d18OkqR1xNhd47dEWacZuxVHX4F1yaRKHE6lrghj2K4BVmgdB04t89/1O/w1cDnyilFU=')
 handler = WebhookHandler('321491bae260d891a883343dbdc7ce08')
 client_id = '075e69c3e1fa5b6'
 client_secret = '35abd64bed78a4404f7e707df9b1a199690c7da2'
 album_id = 'yjdr1'
 API_Get_Image ='API_Get_Image'
+
 
 
 @app.route("/callback", methods=['POST'])
@@ -501,4 +515,7 @@ def handle_message(event):
 
 
 if __name__ == '__main__':
+    # 寫在這邊防止循環 cycle import  -> db import model model import db
+    from db import db
+    db.init_app(app)
     app.run()
