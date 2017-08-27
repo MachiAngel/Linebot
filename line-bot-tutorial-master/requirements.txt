@@ -4,12 +4,9 @@ Flask==0.12
 Flask-Assets==0.12    
 Flask-Babel==0.11.1
 Flask-Script==2.0.5
-
 Flask-SQLAlchemy
 Flask-RESTful
 psycopg2
-
-
 httplib2==0.9.2       
 itsdangerous==0.24    
 Jinja2==2.9.4         
